@@ -3,7 +3,9 @@ Author: Brandon Chen
 Author: Matthew Covone
 Author: Matthew Morrison
 */
-* {box-sizing: border-box}
+* {
+    box-sizing: border-box
+}
 
 .container {
     padding: 16px;
@@ -40,7 +42,7 @@ hr {
 }
 
 .registerbtn:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 a {
