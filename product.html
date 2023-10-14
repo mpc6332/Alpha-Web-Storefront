@@ -1,0 +1,78 @@
+<!-- Author: Matthew Covone -->
+<!-- Author: Matthew Morrison -->
+<!-- Author: Brandon Chen -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopper</title>
+
+    <!-- Internal JavaScript file -->
+    <script defer src="product_script.js"></script>
+
+    <!-- Internal CSS file -->
+    <link href="product_style.css" rel="stylesheet" type="text/css">
+
+    <!-- External CSS file (BootStrap) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <!-- External JavaScript files-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Shopper Information</h3>
+    </div>
+</div>
+<form>
+    <div class="form-group">
+        <label for="id" class="col-xs-2 control-label">Product ID:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="40" class="form-control" id="id"
+                   placeholder="Enter Product ID:" required>
+        </div>
+        <label for="description" class="col-xs-2 control-label">Product Description:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="11" class="form-control" id="description" placeholder="Enter Product Description:"
+                   required>
+        </div>
+        <label for="category" class="col-xs-2 control-label">Product Category:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="25" class="form-control" id="category"
+                   placeholder="Enter Product Category:" required>
+        </div>
+        <label for="unit" class="col-xs-2 control-label">Product Unit of Measure:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="15" class="form-control" id="unit" placeholder="Enter Product Unit of Measure:"
+                   required>
+        </div>
+        <label for="price" class="col-xs-2 control-label">Product Price:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="15" class="form-control" id="price" placeholder="Enter Product Price:"
+                   required>
+        </div>
+        <label for="weight" class="col-xs-2 control-label">Product Weight:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="15" class="form-control" id="weight" placeholder="Enter Product Weight:">
+        </div>
+        <pre id="json-output"></pre>
+        <p><input type="submit" id="signup-button" value="Sign Up" class="registerbtn"/></p>
+    </div>
+</form>
+</body>
+</html>
