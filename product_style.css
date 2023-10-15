@@ -55,3 +55,24 @@ a {
 }
 
 /* Dropdown Button */
+.dropdown {
+    background-color: slategrey;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    display: inline-block;
+    position: relative;
+}
+.dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block;
+}
