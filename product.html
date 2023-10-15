@@ -36,7 +36,7 @@
 <body>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Shopper Information</h3>
+        <h3 class="panel-title">Product Information</h3>
     </div>
 </div>
 <form>
@@ -52,10 +52,12 @@
                    required>
         </div>
         <label for="category" class="col-xs-2 control-label">Product Category:</label>
-        <div class="col-sn-10">
-            <input type="text" maxlength="25" class="form-control" id="category"
-                   placeholder="Enter Product Category:" required>
-        </div>
+        <select name="category" id="category">
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="outerwear">OuterWear</option>
+            <option value="accessories">Accessories</option>
+        </select>
         <label for="unit" class="col-xs-2 control-label">Product Unit of Measure:</label>
         <div class="col-sn-10">
             <input type="text" maxlength="15" class="form-control" id="unit" placeholder="Enter Product Unit of Measure:"
