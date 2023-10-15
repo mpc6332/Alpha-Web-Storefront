@@ -30,7 +30,7 @@ hr {
     margin-bottom: 25px;
 }
 
-.registerbtn {
+.additembtn {
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
@@ -41,7 +41,7 @@ hr {
     opacity: 0.9;
 }
 
-.registerbtn:hover {
+.additembtn:hover {
     opacity: 1;
 }
 
