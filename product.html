@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shopper</title>
+    <title>Product Management</title>
 
     <!-- Internal JavaScript file -->
     <script defer src="product_script.js"></script>
@@ -36,46 +36,69 @@
 <body>
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h3 class="panel-title">Product Information</h3>
+        <h3 class="panel-title">Product Management</h3>
     </div>
 </div>
 <form>
     <div class="form-group">
-        <label for="id" class="col-xs-2 control-label">Product ID:</label>
+        <!-- Product ID -->
+        <label for="productId" class="col-xs-2 control-label">Product ID:</label>
         <div class="col-sn-10">
-            <input type="text" maxlength="40" class="form-control" id="id"
+            <input type="text" maxlength="40" class="form-control" id="productId"
                    placeholder="Enter Product ID:" required>
         </div>
-        <label for="description" class="col-xs-2 control-label">Product Description:</label>
+        <!-- Product Description -->
+        <label for="productDesc" class="col-xs-2 control-label">Product Description:</label>
         <div class="col-sn-10">
-            <input type="text" maxlength="11" class="form-control" id="description" placeholder="Enter Product Description:"
+            <input type="text" maxlength="11" class="form-control" id="productDesc"
+                   placeholder="Enter Product Description:"
                    required>
         </div>
-        <label for="category" class="col-xs-2 control-label">Product Category:</label>
-        <select class="dropdown" name="category" id="category">
-            <option value="category">Category</option>
-            <option value="top">Top</option>
-            <option value="bottom">Bottom</option>
-            <option value="outerwear">OuterWear</option>
-            <option value="accessories">Accessories</option>
-        </select>
-        <label for="unit" class="col-xs-2 control-label">Product Unit of Measure:</label>
+        <!-- Product Category -->
+        <label for="productCategory" class="col-sm-3 control-label" id="productCategoryLabel">Product Category:</label>
         <div class="col-sn-10">
-            <input type="text" maxlength="15" class="form-control" id="unit" placeholder="Enter Product Unit of Measure:"
+            <select class="form-control" id="productCategory" name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Men's clothing">Men's clothing</option>
+                <option value="Woman's clothing">Woman's clothing</option>
+                <option value="Children's clothing">Children's clothing</option>
+            </select>
+        </div>
+        <!-- Product Unit of Measure -->
+        <label for="productUOM" class="col-sm-3 control-label" id="productUOMLabel">Product Unit of Measure:</label>
+        <div class="col-sn-10">
+            <select class="form-control" id="productUOM" name="uom" required>
+                <option value="" disabled selected>Select a unit of measure</option>
+                <option value="Piece">Piece</option>
+                <option value="Dozen">Dozen</option>
+            </select>
+        </div>
+        <!-- Product Price -->
+        <label for="productPrice" class="col-xs-2 control-label" id="productPriceLabel">Product Price:</label>
+        <div class="col-sn-10">
+            <input type="text" maxlength="15" class="form-control" id="productPrice" placeholder="Enter Product Price:"
                    required>
         </div>
-        <label for="price" class="col-xs-2 control-label">Product Price:</label>
+        <!-- Product Weight -->
+        <label for="productWeight" class="col-xs-2 control-label">Product Weight:</label>
         <div class="col-sn-10">
-            <input type="text" maxlength="15" class="form-control" id="price" placeholder="Enter Product Price:"
-                   required>
+            <input type="text" maxlength="15" class="form-control" id="productWeight" placeholder="Enter Product Weight:">
         </div>
-        <label for="weight" class="col-xs-2 control-label">Product Weight:</label>
-        <div class="col-sn-10">
-            <input type="text" maxlength="15" class="form-control" id="weight" placeholder="Enter Product Weight:">
-        </div>
-        <pre id="json-output"></pre>
-        <p><input type="submit" id="additem-button" value="Add Item" class="additembtn"/></p>
+        <!-- Submit button -->
+        <p><input type="submit" id="additem-button" value="Save" class="additembtn"/></p>
     </div>
 </form>
+
+<!-- Lookup section -->
+<div class="search-section" style="display: none;">
+    <h3>Lookup Product Information</h3>
+    <label for="searchProductId">Product ID:</label>
+    <input type="text" id="searchProductId" required>
+    <button id="searchButton">Search</button>
+    <div id="searchResult">
+        <!-- Retrieved information will be displayed here -->
+    </div>
+</div>
+
 </body>
 </html>
