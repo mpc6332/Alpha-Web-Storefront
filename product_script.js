@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
     });
 
-    // Function to handle the lookup search
+    // Function to handle the lookup search1
     $('#searchButton').click(function() {
         var searchTerm = $('#searchProductId').val();
 
