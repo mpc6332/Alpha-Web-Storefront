@@ -45,10 +45,11 @@ $(document).ready(function() {
         var searchTerm = $('#searchProductId').val();
 
         // Check if the search term matches the productId
-        if (formData.productId && formData.productId === searchTerm) {
+        if (Object.keys(formData).length > 0 && formData.productId === searchTerm) {
+            // Display the "JSON" header and the JSON data in separate elements
+            $('#searchResult').html('<h5>JSON</h5>');
             var jsonData = JSON.stringify(formData, null, 2);
-            // Display the "JSON" header and the JSON data
-            $('#searchResult').html('<h3>JSON</h3><pre>' + jsonData + '</pre>');
+            $('#searchResult').append('<pre>' + jsonData + '</pre>');
         } else {
             // Display a message indicating no match
             $('#searchResult').text('No match found.');
