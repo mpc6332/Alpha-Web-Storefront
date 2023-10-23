@@ -42,3 +42,33 @@ h1 {
 #checkout-btn:hover {
     background-color: #45a049;
 }
+
+/* Style the custom select box container */
+.custom-select-container {
+    position: relative;
+}
+
+/* Hide the default select box */
+.custom-select-container select {
+    display: none;
+}
+
+/* Style the custom select box */
+.custom-select {
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100%; /* Set the width to 100% */
+}
+
+/* Style the dropdown arrow */
+.custom-select:after {
+    content: "\25BC"; /* Unicode character for down arrow (▼) */
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+}
