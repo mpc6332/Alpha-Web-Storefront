@@ -34,7 +34,7 @@
 
     <!-- Select box that contains a variety of items -->
     <div class="custom-select-box">
-        <select class="custom-select" id="dropdownInput">
+        <label for="dropdownInput"></label><select class="custom-select" id="dropdownInput">
             <option disabled selected>Select an option</option>
             <option value="001">Men's Jeans</option>
             <option value="004">Women's T-Shirt</option>
@@ -63,9 +63,14 @@
         </tbody>
     </table>
 
+    <!-- Our cart total space -->
     <div class="text-right mt-4" id="cart-total">
         <h3>Total: $<span id="total-amount">0</span></h3>
-        <button class="btn btn-success" id="checkout-btn">Checkout</button>
+
+        <!-- The checkout button. Will display whatever data is present in the table into JSON format.  -->
+        <!-- The data will be displayed in the "cart-data-container" div  -->
+        <button class="btn btn-success" id="checkout-btn" onclick="convertCartToJSON()">Checkout</button>
+        <div id="cart-data-container"></div>
     </div>
 </div>
 </body>

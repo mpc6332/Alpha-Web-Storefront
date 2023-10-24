@@ -8,7 +8,7 @@ var products = {
 document.querySelector("#addButton").addEventListener("click", function() {
     var select = document.getElementById("dropdownInput");
     var selectedOption = select.options[select.selectedIndex];
-    if (selectedOption.value !== "") {
+    if (selectedOption.value !== "Select an option") {
         var productId = selectedOption.value;
         var productInfo = products[productId];
 
@@ -42,6 +42,9 @@ document.querySelector("#addButton").addEventListener("click", function() {
             totalCell.innerHTML = '$' + productInfo.price.toFixed(2);
             actionCell.innerHTML = '<button class="btn btn-danger" onclick="removeRow(this)">Remove</button>';
         }
+
+        // Update the cart total
+        updateCartTotal();
     }
 });
 
@@ -50,6 +53,9 @@ function removeRow(button) {
     var row = button.parentNode.parentNode;
     var productId = row.cells[0].textContent;
     row.parentNode.removeChild(row);
+
+    // Update the cart total
+    updateCartTotal();
 }
 
 // Update total based on quantity
@@ -61,6 +67,8 @@ function updateTotal(input) {
     var quantity = parseInt(input.value);
     var total = price * quantity;
     totalCell.innerHTML = '$' + total.toFixed(2);
+
+    // Update the cart total
     updateCartTotal();
 }
 
@@ -73,4 +81,39 @@ function updateCartTotal() {
         totalAmount += parseFloat(totalCell.innerHTML.replace('$', ''));
     }
     document.getElementById("total-amount").textContent = totalAmount.toFixed(2);
+}
+
+// Function to convert the shopping cart table data to JSON format and display it
+// NOTE: We can only manipulate the data on the client side since there wasn't a server we could use
+function convertCartToJSON() {
+    var cartData = [];
+
+    // Get the cart table body
+    var table = document.querySelector(".table").getElementsByTagName("tbody")[0].rows;
+
+    for (var i = 0; i < table.length; i++) {
+        var row = table[i];
+        var productId = row.cells[0].textContent;
+        var productName = row.cells[1].textContent;
+        var price = parseFloat(row.cells[2].textContent.replace('$', ''));
+        var quantity = parseInt(row.cells[3].querySelector("input").value);
+        var total = parseFloat(row.cells[4].textContent.replace('$', ''));
+
+        var cartItem = {
+            productId: productId,
+            productName: productName,
+            price: price,
+            quantity: quantity,
+            total: total
+        };
+
+        cartData.push(cartItem);
+    }
+
+    // Convert the cart data to JSON
+    var cartJSON = JSON.stringify(cartData);
+
+    // Display the JSON data in the "cart-data-container" div
+    var cartDataContainer = document.getElementById("cart-data-container");
+    cartDataContainer.textContent = cartJSON;
 }
