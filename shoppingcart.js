@@ -109,6 +109,17 @@ function convertCartToJSON() {
 
         cartData.push(cartItem);
     }
+    $.ajax({
+        url:"/echo/json/",
+        type: "POST",
+        data: 'json={cartData}',
+        success: function (response) {
+            console.log(response);
+        },
+        error: function () {
+            console.log('there was an error!');
+        }
+    });
 
     // Convert the cart data to JSON
     var cartJSON = JSON.stringify(cartData);
