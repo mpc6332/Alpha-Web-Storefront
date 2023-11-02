@@ -109,6 +109,8 @@ function convertCartToJSON() {
 
         cartData.push(cartItem);
     }
+
+    // Current gives out an error in the console, not sure why (probably due to server/url configurations)
     $.ajax({
         url:"/echo/json/",
         type: "POST",
